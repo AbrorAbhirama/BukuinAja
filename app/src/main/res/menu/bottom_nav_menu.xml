@@ -10,11 +10,6 @@
         android:title="Riwayat" />
 
     <item
-        android:id="@+id/navigation_debt"
-        android:icon="@drawable/ic_debt"
-        android:title="Hutang" />
-
-    <item
         android:id="@+id/navigation_report"
         android:icon="@drawable/ic_report"
         android:title="laporan" />

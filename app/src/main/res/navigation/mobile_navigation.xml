@@ -18,12 +18,6 @@
         tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/navigation_debt"
-        android:name="com.example.bukuinaja.ui.DebtFragment"
-        android:label="Debt"
-        tools:layout="@layout/fragment_debt" />
-
-    <fragment
         android:id="@+id/navigation_report"
         android:name="com.example.bukuinaja.ui.ReportFragment"
         android:label="Report"
