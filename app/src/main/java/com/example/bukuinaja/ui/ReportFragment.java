@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bukuinaja.R;
-import com.example.bukuinaja.databinding.FragmentReporBinding;
+import com.example.bukuinaja.databinding.FragmentReportBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,11 +18,11 @@ import com.example.bukuinaja.databinding.FragmentReporBinding;
  * create an instance of this fragment.
  */
 public class ReportFragment extends Fragment {
-    private FragmentReporBinding binding;
+    private FragmentReportBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentReporBinding.inflate(inflater, container, false);
+        binding = FragmentReportBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;
