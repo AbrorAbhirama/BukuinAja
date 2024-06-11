@@ -6,17 +6,46 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/transaction"
+        android:id="@+id/top10"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="#FFBD5B"
-        android:text="Total Transaksi"
+        android:layout_marginTop="20dp"
+        android:background="#FF5B6E"
+        android:text="10 Barang Paling Untung Terjual"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day_high" />
+
+    <TextView
+        android:id="@+id/day_low"
+        android:layout_width="195dp"
+        android:layout_height="41dp"
+        android:text="Transaksi tertinggi di hari :"
+        app:layout_constraintStart_toEndOf="@+id/day_high"
+        app:layout_constraintTop_toTopOf="@+id/day_high" />
+
+    <TextView
+        android:id="@+id/day_high"
+        android:layout_width="195dp"
+        android:layout_height="41dp"
+        android:text="Transaksi tertinggi di hari :"
+        app:layout_constraintStart_toStartOf="@+id/transaction"
         app:layout_constraintTop_toBottomOf="@+id/transaction" />
+
+    <TextView
+        android:id="@+id/profit"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#5BFFB2"
+        android:text="Untung "
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_all" />
 
     <Button
         android:id="@+id/date_week"
@@ -29,14 +58,12 @@
         app:layout_constraintTop_toTopOf="@+id/date_all" />
 
     <TextView
-        android:id="@+id/income"
+        android:id="@+id/profit_high"
         android:layout_width="195dp"
         android:layout_height="41dp"
         android:text="Keuntungan tertinggi di hari :"
-        app:layout_constraintEnd_toEndOf="@+id/transaction"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/transaction"
-        app:layout_constraintTop_toBottomOf="@+id/transaction" />
+        app:layout_constraintStart_toStartOf="@+id/profit"
+        app:layout_constraintTop_toBottomOf="@+id/profit" />
 
     <TextView
         android:id="@+id/Title"
@@ -66,14 +93,14 @@
         android:id="@+id/transaction"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="#5BFFB2"
-        android:text="Untung "
+        android:layout_marginTop="20dp"
+        android:background="#FFDB5B"
+        android:text="Transaksi"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_all" />
+        app:layout_constraintTop_toBottomOf="@+id/profit_high" />
 
     <Button
         android:id="@+id/date_all"
@@ -87,12 +114,12 @@
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <TextView
-        android:id="@+id/outcome"
+        android:id="@+id/profit_low"
         android:layout_width="195dp"
         android:layout_height="41dp"
         android:text="Keuntungan terendah di hari :"
-        app:layout_constraintStart_toEndOf="@+id/income"
-        app:layout_constraintTop_toTopOf="@+id/income" />
+        app:layout_constraintStart_toEndOf="@+id/profit_high"
+        app:layout_constraintTop_toTopOf="@+id/profit_high" />
 
     <Button
         android:id="@+id/date_last"
@@ -103,4 +130,10 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/date_all" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="390dp"
+        android:layout_height="369dp"
+        app:layout_constraintStart_toStartOf="@+id/top10"
+        app:layout_constraintTop_toBottomOf="@+id/top10" />
 </androidx.constraintlayout.widget.ConstraintLayout>

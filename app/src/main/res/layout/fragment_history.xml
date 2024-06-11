@@ -67,7 +67,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/income" />
+        app:layout_constraintTop_toBottomOf="@+id/profit_high" />
 
     <TextView
         android:id="@+id/transaction"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/date_all" />
 
     <TextView
-        android:id="@+id/income"
+        android:id="@+id/profit_high"
         android:layout_width="195dp"
         android:layout_height="41dp"
         android:text="Pemasukan"
@@ -95,11 +95,11 @@
         app:layout_constraintTop_toBottomOf="@+id/transaction" />
 
     <TextView
-        android:id="@+id/outcome"
+        android:id="@+id/profit_low"
         android:layout_width="195dp"
         android:layout_height="41dp"
         android:text="Pengeluaran"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/income"
-        app:layout_constraintTop_toTopOf="@+id/income" />
+        app:layout_constraintStart_toEndOf="@+id/profit_high"
+        app:layout_constraintTop_toTopOf="@+id/profit_high" />
 </androidx.constraintlayout.widget.ConstraintLayout>
