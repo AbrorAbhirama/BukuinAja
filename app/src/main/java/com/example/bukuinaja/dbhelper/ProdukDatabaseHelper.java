@@ -23,7 +23,7 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
     private static final String COllum_image = "image";
     private static final String Collum_favorite = "favorite";
 
-    ProdukDatabaseHelper(@Nullable Context context) {
+    public ProdukDatabaseHelper(@Nullable Context context) {
         super(context, DB_Name, null, DB_Version);
         this.context = context;
     }
@@ -45,7 +45,7 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    Cursor readDB(){
+    public Cursor readDB(){
         String querry = "SELECT * FROM " + Table_Name;
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -55,7 +55,7 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
         }
         return  cursor;
     }
-    void addData(String name, byte[]img, int fav){
+    public void addData(String name, byte[]img, int fav){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -70,7 +70,7 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void updateData(String row_id, String name, byte[]img, int fav){
+    public void updateData(String row_id, String name, byte[]img, int fav){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(Collum_name, name);
@@ -84,7 +84,7 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Success update", Toast.LENGTH_SHORT).show();
         }
     }
-    void deleteOneRow(String row_id){
+    public void deleteOneRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(Table_Name, "rowid=?", new String[]{row_id});
         if (result == -1){
@@ -102,5 +102,15 @@ public class ProdukDatabaseHelper extends SQLiteOpenHelper {
             bt = BitmapFactory.decodeByteArray(img, 0, img.length);
         }
         return bt;
+    }
+    public int getID(String produk){
+        String querry = "SELECT * FROM " + Table_Name + " WHERE " + "name = " + produk + ";";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null){
+            cursor = db.rawQuery(querry, null);
+        }
+        return Integer.parseInt(cursor.getString(0));
     }
 }

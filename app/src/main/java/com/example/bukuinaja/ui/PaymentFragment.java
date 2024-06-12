@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.bukuinaja.R;
 import com.example.bukuinaja.activity.AddPaymentActivity;
+import com.example.bukuinaja.activity.AddProductActivity;
 import com.example.bukuinaja.databinding.FragmentPaymentBinding;
 
 public class PaymentFragment extends Fragment {
@@ -30,7 +31,7 @@ public class PaymentFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), AddPaymentActivity.class);
+                Intent i = new Intent(getActivity(), AddProductActivity.class);
                 startActivity(i);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 

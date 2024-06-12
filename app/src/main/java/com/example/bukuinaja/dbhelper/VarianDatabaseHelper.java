@@ -35,10 +35,7 @@ public class VarianDatabaseHelper extends SQLiteOpenHelper {
                         Collum_name + " TEXT, " +
                         COllum_jual + " INTEGER, " +
                         Collum_beli + " INTEGER, "+
-                        Collum_Produk + " INTEGER, " +
-                        "FOREIGN KEY(" + Collum_Produk +
-                        ") REFERENCES " + Foreign_Table +
-                "(" + Collum_Produk + "));";
+                        Collum_Produk + " INTEGER REFERENCES produk(" + Collum_Produk + ") ON DELETE CASCADE);";
         db.execSQL(querry );
     }
 
@@ -47,7 +44,7 @@ public class VarianDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Table_Name);
         onCreate(db);
     }
-    Cursor readDB(){
+    public Cursor readDB(){
         String querry = "SELECT * FROM " + Table_Name;
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -57,7 +54,7 @@ public class VarianDatabaseHelper extends SQLiteOpenHelper {
         }
         return  cursor;
     }
-    void addData(String name, String jual, String beli, int produk){
+    public void addData(String name, int jual, int beli, int produk){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -73,7 +70,7 @@ public class VarianDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void updateData(String row_id, String name, String jual, String beli, int produk){
+    public void updateData(String row_id, String name, String jual, String beli, String produk){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(Collum_name, name);
@@ -88,7 +85,7 @@ public class VarianDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Success update", Toast.LENGTH_SHORT).show();
         }
     }
-    void deleteOneRow(String row_id){
+    public void deleteOneRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(Table_Name, "rowid=?", new String[]{row_id});
         if (result == -1){
