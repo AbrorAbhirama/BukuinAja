@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BukuinAja"
         tools:targetApi="31">
         <activity
+            android:name=".ProductActivity2"
+            android:exported="false" />
+        <activity
             android:name=".activity.AddPaymentActivity"
             android:exported="false" />
         <activity
